@@ -56,7 +56,7 @@ email=hello%40gmail.com&csrf=ADZH7InJRT7Lv1yjJKl3pwDRw8LhRQkR
 1. **[State-Changing action]:** The `/my-account/change-email` endpoint handles a permanent, unauthorized-sensitive change to user data.
 2. **[Session + Token based Authentication]:** The application relies entirely on the `session` cookie and anti-CSRF token to authenticate the identity of the user initiating the request.
 3. **[Lack of SameSite attribute]:** No modern security measures , like `SameSite` flags (`Strict` or `Lax`) for session cookies,meaning the browser can attach cookies to the cross-site requests initiated by third-party domains.
-4. **[Method Flaw (Hypothesis)]:** Sending this request to Burp Repeater and changing the method from `POST` to `GET` (while removing the `csrf` parameter entirely) results in a `200 OK` or a successful `302 Redirect`. This confirms that the backend application fails to validate the token when an alternative HTTP method is used.
+4. **[Method Flaw ]:** Sending this request to Burp Repeater and changing the method from `POST` to `GET` (while removing the `csrf` parameter entirely) results in a `200 OK` or a successful `302 Redirect`. This confirms that the backend application fails to validate the token when an alternative HTTP method is used.
 
 ---
 
